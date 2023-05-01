@@ -13,6 +13,7 @@ export default class Cliente {
     private telefones: Array<Telefone>
     private produtosConsumidos: Array<Produto>
     private servicosConsumidos: Array<Servico>
+
     constructor(nome: string, nomeSocial: string, cpf: CPF) {
         this.nome = nome
         this.nomeSocial = nomeSocial
@@ -23,6 +24,7 @@ export default class Cliente {
         this.produtosConsumidos = []
         this.servicosConsumidos = []
     }
+
     public get getCpf(): CPF {
         return this.cpf
     }
@@ -40,5 +42,12 @@ export default class Cliente {
     }
     public get getServicosConsumidos(): Array<Servico> {
         return this.servicosConsumidos
+    }
+
+    public adicionarTelefone(telefone: Telefone): void {
+        this.telefones.push(telefone)
+    }
+    public adicionarRg(rg: RG): void {
+        this.rgs.push(rg)
     }
 }

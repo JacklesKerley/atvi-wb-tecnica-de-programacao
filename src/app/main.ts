@@ -10,18 +10,18 @@ import ListagemServicos from "../negocio/listagemServicos";
 import SelecionadorCliente from "../negocio/selecionadorCliente";
 import ExcluidorCliente from "../negocio/excluidorCliente";
 
-console.log(`Bem-vindo ao cadastro de clientes do Grupo World Beauty`)
+console.log(`\nBem-vindo ao cadastro de clientes do Grupo World Beauty\n`)
 let empresa = new Empresa()
 let execucao = true
 
 while (execucao) {
-    console.log(`Opções:`);
+    console.log(`Opções:\n`);
     console.log(`1 - Cadastrar cliente`);
     console.log(`2 - Listar todos os clientes`);
-    console.log(`3 - Cadastrar produto`);
-    console.log(`4 - Lista todos os produtos`);
-    console.log(`5 - Cadastrar servico`);
-    console.log(`6 - Lista todos os servicos`);
+    // console.log(`3 - Cadastrar produto`);
+    // console.log(`4 - Lista todos os produtos`);
+    // console.log(`5 - Cadastrar servico`);
+    // console.log(`6 - Lista todos os servicos`);
     console.log(`7 - Excluir cliente`);
     console.log(`0 - Sair`);
 
@@ -64,7 +64,7 @@ while (execucao) {
             break;
         case 0:
             execucao = false
-            console.log(`Até mais`)
+            console.log(`\nAté mais\n`)
             break;
         default:
             console.log(`Operação não entendida :(`)

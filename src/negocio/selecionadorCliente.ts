@@ -1,5 +1,6 @@
 import Cliente from "../modelo/cliente";
 import CPF from "../modelo/cpf";
+import RG from "../modelo/rg";
 
 export default class SelecionadorCliente {
     private clientes: Array<Cliente>
