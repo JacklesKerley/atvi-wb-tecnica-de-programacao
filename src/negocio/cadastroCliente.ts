@@ -17,7 +17,7 @@ export default class CadastroCliente extends Cadastro {
         console.log(`\nInício do cadastro do cliente\n`);
 
         let nome = this.entrada.receberTexto(`Por favor informe o nome do cliente: `)
-        let nomeSocial = this.entrada.receberTexto(`Por favor informe o nome social do cliente: `)
+        let sobrenome = this.entrada.receberTexto(`Por favor informe o sobrenome do cliente: `)
         
         //pega o CPF + data de emissão
         let valorCPF = this.entrada.receberTexto(`Por favor informe o número do CPF: `);
@@ -39,7 +39,7 @@ export default class CadastroCliente extends Cadastro {
         let dataEmissaoRG = new Date(ano, mes, dia)
         let rg = new RG(valorRG, dataEmissaoRG);
         
-        let cliente = new Cliente(nome, nomeSocial, cpf);
+        let cliente = new Cliente(nome, sobrenome, cpf);
         this.clientes.push(cliente)
         
         //pega o numero de telefone
