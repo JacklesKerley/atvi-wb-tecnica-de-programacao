@@ -12,6 +12,8 @@ import SelecionadorProduto from "../negocio/selecionadorProduto.ts";
 import ExcluidorProduto from "../negocio/excluidorProduto";
 import SelecionadorServico from "../negocio/selecionadorServicos";
 import ExcluidorServico from "../negocio/excluidorServicos";
+import AtualizarServico from "../negocio/atualizarServico";
+import AtualizarProduto from "../negocio/atualizarProduto";
 
 console.log(`\nBem-vindo ao cadastro de clientes do Grupo World Beauty\n`)
 let empresa = new Empresa()
@@ -67,7 +69,13 @@ while (execucao) {
             listagemProdutos.listar()
             break;
         case 7:
+            let selecionadorAtualizarProduto = new SelecionadorProduto(empresa.getProdutos)
+            let nomeProdutoAtualizar = entrada.receberTexto(`Por favor, digite o nome do produto que deseja atualizar: `)
+            let produtoAlvo = selecionadorAtualizarProduto.selecionar(nomeProdutoAtualizar)
 
+            let atualizardorProduto = new AtualizarProduto(empresa.getProdutos)
+            let nomeProdutoAtualizado = entrada.receberTexto(`Por favor, digite o nome do produto atualizado: `)
+            atualizardorProduto.atualizar(produtoAlvo,nomeProdutoAtualizado)
             break;
         case 8:
             let selecionadorProduto = new SelecionadorProduto(empresa.getProdutos)
@@ -87,7 +95,13 @@ while (execucao) {
             listagemServicos.listar()
             break;
         case 11:
+            let selecionadorAtualizarServico = new SelecionadorServico(empresa.getServicos)
+            let nomeServicoAtualizar = entrada.receberTexto(`Por favor, digite o nome do serviço que deseja atualizar: `)
+            let servicoAlvo = selecionadorAtualizarServico.selecionar(nomeServicoAtualizar)
 
+            let atualizardorServico = new AtualizarServico(empresa.getServicos)
+            let nomeServicoAtualizado = entrada.receberTexto(`Por favor, digite o nome do serviço atualizado: `)
+            atualizardorServico.atualizar(servicoAlvo,nomeServicoAtualizado)
             break;
         case 12:
             let selecionadorServico = new SelecionadorServico(empresa.getServicos)
