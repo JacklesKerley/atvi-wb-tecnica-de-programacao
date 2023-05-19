@@ -75,7 +75,8 @@ while (execucao) {
 
             let atualizardorProduto = new AtualizarProduto(empresa.getProdutos)
             let nomeProdutoAtualizado = entrada.receberTexto(`Por favor, digite o nome do produto atualizado: `)
-            atualizardorProduto.atualizar(produtoAlvo,nomeProdutoAtualizado)
+            let valorProdutoAtualizado = entrada.receberNumero(`Por Favor, digite o novo valor do produto 00.00:`)
+            atualizardorProduto.atualizar(produtoAlvo,nomeProdutoAtualizado,valorProdutoAtualizado)
             break;
         case 8:
             let selecionadorProduto = new SelecionadorProduto(empresa.getProdutos)

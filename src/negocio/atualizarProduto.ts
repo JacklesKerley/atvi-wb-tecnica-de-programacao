@@ -6,11 +6,12 @@ export default class AtualizarProduto {
         this.produtos = produtos
     }
 
-    public atualizar(produtoAlvo: Produto, novoProduto:string) {
+    public atualizar(produtoAlvo: Produto, novoProduto:string, novoValor:number) {
         this.produtos.forEach(produto =>{
             if (produto.nome === produtoAlvo.nome){
                 let indice = this.produtos.indexOf(produto)
                 this.produtos[indice].nome = novoProduto
+                this.produtos[indice].valor = novoValor
             }
         })
     }
