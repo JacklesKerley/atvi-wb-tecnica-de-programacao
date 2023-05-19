@@ -8,7 +8,7 @@ export default class SelecionadorServico {
     }
 
     public selecionar(nome : string){
-        let servicoAlvo = new Servico(nome)
+        let servicoAlvo = new Servico(nome,0)
         
         this.servicos.forEach(servico =>{
             if (nome === servico.getNome){

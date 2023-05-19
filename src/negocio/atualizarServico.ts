@@ -7,11 +7,12 @@ export default class AtualizarServico {
         this.servicos = servicos
     }
 
-    public atualizar(servicoAlvo: Servico, novoServico:string) {
+    public atualizar(servicoAlvo: Servico, novoServico:string, novoValor:number) {
         this.servicos.forEach(servico =>{
             if (servico.nome === servicoAlvo.nome){
                 let indice = this.servicos.indexOf(servico)
                 this.servicos[indice].nome = novoServico
+                this.servicos[indice].valor = novoValor
             }
         })
     }

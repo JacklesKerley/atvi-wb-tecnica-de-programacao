@@ -102,7 +102,8 @@ while (execucao) {
 
             let atualizardorServico = new AtualizarServico(empresa.getServicos)
             let nomeServicoAtualizado = entrada.receberTexto(`Por favor, digite o nome do serviço atualizado: `)
-            atualizardorServico.atualizar(servicoAlvo,nomeServicoAtualizado)
+            let valorServicoAtualizado = entrada.receberNumero(`Por favor, digite o valor do serviço atualizado 00.00: `)
+            atualizardorServico.atualizar(servicoAlvo,nomeServicoAtualizado,valorServicoAtualizado)
             break;
         case 12:
             let selecionadorServico = new SelecionadorServico(empresa.getServicos)
