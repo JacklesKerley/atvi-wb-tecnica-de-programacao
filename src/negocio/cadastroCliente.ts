@@ -18,7 +18,7 @@ export default class CadastroCliente extends Cadastro {
 
         let nome = this.entrada.receberTexto(`Por favor informe o nome do cliente: `)
         let sobrenome = this.entrada.receberTexto(`Por favor informe o sobrenome do cliente: `)
-        
+
         //pega o CPF + data de emissão
         let valorCPF = this.entrada.receberTexto(`Por favor informe o número do CPF: `);
         let dataCPF = this.entrada.receberTexto(`Por favor informe a data de emissão do CPF, no padrão dd/mm/yyyy: `);
@@ -38,20 +38,44 @@ export default class CadastroCliente extends Cadastro {
         dia = new Number(partesDataRG[0].valueOf()).valueOf()
         let dataEmissaoRG = new Date(ano, mes, dia)
         let rg = new RG(valorRG, dataEmissaoRG);
-        
         let cliente = new Cliente(nome, sobrenome, cpf);
         this.clientes.push(cliente)
-        
+        cliente.adicionarRg(rg)
+        let segundoRg = this.entrada.receberTexto(`Deseja adicionar outro RG? S/N`)
+
+        //Cadastra o segundo RG
+        if (segundoRg === 'S' || segundoRg === 's') {
+            let valorRG2 = this.entrada.receberTexto(`Por favor informe o número do outro RG: `)
+            let dataRG2 = this.entrada.receberTexto(`Por favor informe a data de emissão do outro RG, no padrão dd/mm/yyyy: `);
+            let partesDataRG2 = dataRG2.split('/')
+            ano = new Number(partesDataRG2[2].valueOf()).valueOf()
+            mes = new Number(partesDataRG2[1].valueOf()).valueOf()
+            dia = new Number(partesDataRG2[0].valueOf()).valueOf()
+            let dataEmissaoRG2 = new Date(ano, mes, dia)
+            let rg2 = new RG(valorRG2, dataEmissaoRG2);
+            cliente.adicionarRg(rg2)
+        }
+
         //pega o numero de telefone
         let tel = this.entrada.receberTexto(`Por favor informe o número do telefone 99-99999999: `)
         let partesTel = tel.split('-')
         let ddd = partesTel[0].valueOf()
         let numero = partesTel[1].valueOf()
         let telefone = new Telefone(ddd, numero)
-        
         cliente.adicionarTelefone(telefone)
-        cliente.adicionarRg(rg)
-        
-        console.log(`\nCadastro concluído :)\n`);
+        let tel2 = this.entrada.receberTexto('Deseja adicionar outro número de telefone? S/N');
+        let tele2 = '';
+        //Cadastra o segundo número
+        if (tel2 === 'S' || tel2 === 's') {
+            tele2 = this.entrada.receberTexto('Por favor, informe o número do outro telefone 99-99999999: ');
+            let partesTel2 = tele2.split('-');
+            let ddd2 = partesTel2[0].valueOf();
+            let numero2 = partesTel2[1].valueOf();
+            let telefone2 = new Telefone(ddd2, numero2);
+            cliente.adicionarTelefone(telefone2);
+            console.log('\nCadastro concluído :)\n');
+        } else {
+            console.log('\nCadastro concluído :)\n');
+        }
     }
 }
