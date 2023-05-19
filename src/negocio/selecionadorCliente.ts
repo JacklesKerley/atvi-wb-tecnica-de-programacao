@@ -9,7 +9,7 @@ export default class SelecionadorCliente {
 
     public selecionar(cpf : string){
         let cpfVazio = new CPF("", new Date())
-        let clienteAlvo = new Cliente("", "", cpfVazio)
+        let clienteAlvo = new Cliente("", "", cpfVazio,"")
         
         this.clientes.forEach(cliente =>{
             if (cpf === cliente.getCpf.getValor){

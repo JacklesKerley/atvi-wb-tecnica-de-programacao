@@ -11,6 +11,7 @@ export default class ListagemClientes extends Listagem {
         console.log(`\nLista de todos os clientes:\n`);
         this.clientes.forEach(cliente => {
             console.log(`Nome: ${cliente.nome[0].toUpperCase()}${cliente.nome.substring(1)} ${cliente.sobrenome[0].toUpperCase()}${cliente.sobrenome.substring(1)}`);
+            console.log(`Gênero: ${cliente.genero}`)
             console.log(`CPF: ${cliente.getCpf.getValor}`);
             const rgs = cliente.getRgs.map(rg => `${rg.getValor}`);
             console.log(`RG: ${rgs}`);
