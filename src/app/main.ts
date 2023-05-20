@@ -14,6 +14,8 @@ import SelecionadorServico from "../negocio/selecionadorServicos";
 import ExcluidorServico from "../negocio/excluidorServicos";
 import AtualizarServico from "../negocio/atualizarServico";
 import AtualizarProduto from "../negocio/atualizarProduto";
+import AtualizarCliente from "../negocio/atualizarCliente";
+import Telefone from "../modelo/telefone";
 
 console.log(`\nBem-vindo ao cadastro de clientes do Grupo World Beauty\n`)
 let empresa = new Empresa()
@@ -49,8 +51,29 @@ while (execucao) {
             listagemClientes.listar()
             break;
         case 3:
-            
-            break;    
+            let selecionadorClienteAtualizar = new SelecionadorCliente(empresa.getClientes)
+            let cpfCliente = entrada.receberTexto(`Por favor, digite o cpf do cliente que deseja atualizar: `)
+            let clienteAlvoAtualizar = selecionadorClienteAtualizar.selecionar(cpfCliente)
+
+            let atualizadorCliente = new AtualizarCliente(empresa.getClientes)
+            let nomeClienteAtualizado = entrada.receberTexto(`Por favor, digite o nome do cliente atualizado: `)
+            let sobrenomeClienteAtualizado = entrada.receberTexto(`Por favor, digite o sobrenome do cliente atualizado: `)
+            let telefoneClienteAtualizado = entrada.receberTexto(`Por favor, digite o telefone do cliente atualizado no modelo 99-99999999: `)
+            let partesTel = telefoneClienteAtualizado.split('-')
+            let ddd = partesTel[0].valueOf()
+            let numero = partesTel[1].valueOf()
+            let telefone = new Telefone(ddd, numero)
+            atualizadorCliente.atualizar(clienteAlvoAtualizar, nomeClienteAtualizado, sobrenomeClienteAtualizado, telefone)
+            let atualizarTelefone2 = entrada.receberTexto(`Deseja adicionar ou atualizar o segundo telefone? S/N`)
+            if (atualizarTelefone2 === 'S' || atualizarTelefone2 === 's') {
+                let telefoneClienteAtualizado = entrada.receberTexto(`Por favor, digite o segundo telefone do cliente atualizado no modelo 99-99999999: `)
+                let partesTel = telefoneClienteAtualizado.split('-')
+                let ddd = partesTel[0].valueOf()
+                let numero = partesTel[1].valueOf()
+                let telefone2 = new Telefone(ddd, numero)
+                atualizadorCliente.atualizarTelefone2(clienteAlvoAtualizar,telefone2)
+            }
+            break;
         case 4:
             let selecionadorCliente = new SelecionadorCliente(empresa.getClientes)
             let cpf = entrada.receberTexto(`Por favor, digite o cpf do cliente que deseja excluir: `)
@@ -76,13 +99,13 @@ while (execucao) {
             let atualizardorProduto = new AtualizarProduto(empresa.getProdutos)
             let nomeProdutoAtualizado = entrada.receberTexto(`Por favor, digite o nome do produto atualizado: `)
             let valorProdutoAtualizado = entrada.receberNumero(`Por Favor, digite o novo valor do produto 00.00:`)
-            atualizardorProduto.atualizar(produtoAlvo,nomeProdutoAtualizado,valorProdutoAtualizado)
+            atualizardorProduto.atualizar(produtoAlvo, nomeProdutoAtualizado, valorProdutoAtualizado)
             break;
         case 8:
             let selecionadorProduto = new SelecionadorProduto(empresa.getProdutos)
             let nomeProduto = entrada.receberTexto(`Por favor, digite o nome do produto que deseja excluir: `)
             let produto = selecionadorProduto.selecionar(nomeProduto)
-            
+
             let excluidorProduto = new ExcluidorProduto(empresa.getProdutos)
             excluidorProduto.excluir(produto)
             console.log(`\nProduto excluido: ` + produto.nome + `\n`)
@@ -103,7 +126,7 @@ while (execucao) {
             let atualizardorServico = new AtualizarServico(empresa.getServicos)
             let nomeServicoAtualizado = entrada.receberTexto(`Por favor, digite o nome do serviço atualizado: `)
             let valorServicoAtualizado = entrada.receberNumero(`Por favor, digite o valor do serviço atualizado 00.00: `)
-            atualizardorServico.atualizar(servicoAlvo,nomeServicoAtualizado,valorServicoAtualizado)
+            atualizardorServico.atualizar(servicoAlvo, nomeServicoAtualizado, valorServicoAtualizado)
             break;
         case 12:
             let selecionadorServico = new SelecionadorServico(empresa.getServicos)
