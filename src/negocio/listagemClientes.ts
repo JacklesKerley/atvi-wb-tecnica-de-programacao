@@ -15,7 +15,7 @@ export default class ListagemClientes extends Listagem {
             console.log(`CPF: ${cliente.getCpf.getValor}`);
             const rgs = cliente.getRgs.map(rg => `${rg.getValor}`);
             console.log(`RG: ${rgs}`);
-            const telefones = cliente.getTelefones.map(telefone => `${telefone.getDdd}-${telefone.getNumero}`).join(', ');
+            const telefones = cliente.getTelefones.map(telefone => `(${telefone.getDdd}) ${telefone.getNumero}`).join(', ');
             console.log(`Telefone: ${telefones}`);
             console.log(`\n--------------------------------------\n`);
         });

@@ -42,7 +42,7 @@ export default class CadastroCliente extends Cadastro {
         let cliente = new Cliente(nome, sobrenome, cpf,genero);
         this.clientes.push(cliente)
         cliente.adicionarRg(rg)
-        let segundoRg = this.entrada.receberTexto(`Deseja adicionar outro RG? S/N`)
+        let segundoRg = this.entrada.receberTexto(`Deseja adicionar outro RG?: S/N `)
 
         //Cadastra o segundo RG
         if (segundoRg === 'S' || segundoRg === 's') {
@@ -64,7 +64,7 @@ export default class CadastroCliente extends Cadastro {
         let numero = partesTel[1].valueOf()
         let telefone = new Telefone(ddd, numero)
         cliente.adicionarTelefone(telefone)
-        let tel2 = this.entrada.receberTexto('Deseja adicionar outro número de telefone? S/N');
+        let tel2 = this.entrada.receberTexto('Deseja adicionar outro número de telefone?: S/N ');
         let tele2 = '';
         //Cadastra o segundo número
         if (tel2 === 'S' || tel2 === 's') {

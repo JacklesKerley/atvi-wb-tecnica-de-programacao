@@ -51,28 +51,12 @@ while (execucao) {
             listagemClientes.listar()
             break;
         case 3:
+            let atualizacaoCliente = new AtualizarCliente(empresa.getClientes)
             let selecionadorClienteAtualizar = new SelecionadorCliente(empresa.getClientes)
             let cpfCliente = entrada.receberTexto(`Por favor, digite o cpf do cliente que deseja atualizar: `)
             let clienteAlvoAtualizar = selecionadorClienteAtualizar.selecionar(cpfCliente)
-
-            let atualizadorCliente = new AtualizarCliente(empresa.getClientes)
-            let nomeClienteAtualizado = entrada.receberTexto(`Por favor, digite o nome do cliente atualizado: `)
-            let sobrenomeClienteAtualizado = entrada.receberTexto(`Por favor, digite o sobrenome do cliente atualizado: `)
-            let telefoneClienteAtualizado = entrada.receberTexto(`Por favor, digite o telefone do cliente atualizado no modelo 99-99999999: `)
-            let partesTel = telefoneClienteAtualizado.split('-')
-            let ddd = partesTel[0].valueOf()
-            let numero = partesTel[1].valueOf()
-            let telefone = new Telefone(ddd, numero)
-            atualizadorCliente.atualizar(clienteAlvoAtualizar, nomeClienteAtualizado, sobrenomeClienteAtualizado, telefone)
-            let atualizarTelefone2 = entrada.receberTexto(`Deseja adicionar ou atualizar o segundo telefone? S/N`)
-            if (atualizarTelefone2 === 'S' || atualizarTelefone2 === 's') {
-                let telefoneClienteAtualizado = entrada.receberTexto(`Por favor, digite o segundo telefone do cliente atualizado no modelo 99-99999999: `)
-                let partesTel = telefoneClienteAtualizado.split('-')
-                let ddd = partesTel[0].valueOf()
-                let numero = partesTel[1].valueOf()
-                let telefone2 = new Telefone(ddd, numero)
-                atualizadorCliente.atualizarTelefone2(clienteAlvoAtualizar,telefone2)
-            }
+            console.log(clienteAlvoAtualizar)
+            atualizacaoCliente.atualizacaoCompleta(clienteAlvoAtualizar)
             break;
         case 4:
             let selecionadorCliente = new SelecionadorCliente(empresa.getClientes)
