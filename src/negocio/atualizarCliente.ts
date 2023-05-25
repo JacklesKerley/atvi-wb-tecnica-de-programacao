@@ -39,7 +39,6 @@ export default class AtualizarCliente {
     }
     public atualizacaoCompleta(clienteAlvo: Cliente) {
         let entrada = new Entrada()
-        let empresa = new Empresa()
         let opcao1 = entrada.receberTexto(`Deseja atualizar o nome?: S/N `)
         if (opcao1 === 'S' || opcao1 === 's') {
             let nomeClienteAtualizado = entrada.receberTexto(`Por favor, digite o nome do cliente atualizado: `)

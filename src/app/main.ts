@@ -55,7 +55,6 @@ while (execucao) {
             let selecionadorClienteAtualizar = new SelecionadorCliente(empresa.getClientes)
             let cpfCliente = entrada.receberTexto(`Por favor, digite o cpf do cliente que deseja atualizar: `)
             let clienteAlvoAtualizar = selecionadorClienteAtualizar.selecionar(cpfCliente)
-            console.log(clienteAlvoAtualizar)
             atualizacaoCliente.atualizacaoCompleta(clienteAlvoAtualizar)
             break;
         case 4:
@@ -81,9 +80,7 @@ while (execucao) {
             let produtoAlvo = selecionadorAtualizarProduto.selecionar(nomeProdutoAtualizar)
 
             let atualizardorProduto = new AtualizarProduto(empresa.getProdutos)
-            let nomeProdutoAtualizado = entrada.receberTexto(`Por favor, digite o nome do produto atualizado: `)
-            let valorProdutoAtualizado = entrada.receberNumero(`Por Favor, digite o novo valor do produto 00.00:`)
-            atualizardorProduto.atualizar(produtoAlvo, nomeProdutoAtualizado, valorProdutoAtualizado)
+            atualizardorProduto.atualizacaoCompleta(produtoAlvo)
             break;
         case 8:
             let selecionadorProduto = new SelecionadorProduto(empresa.getProdutos)
