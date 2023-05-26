@@ -15,7 +15,6 @@ import ExcluidorServico from "../negocio/excluidorServicos";
 import AtualizarServico from "../negocio/atualizarServico";
 import AtualizarProduto from "../negocio/atualizarProduto";
 import AtualizarCliente from "../negocio/atualizarCliente";
-import Telefone from "../modelo/telefone";
 
 console.log(`\nBem-vindo ao cadastro de clientes do Grupo World Beauty\n`)
 let empresa = new Empresa()
@@ -39,6 +38,7 @@ while (execucao) {
     console.log(`11 - Atualizar serviço`);
     console.log(`12 - Excluir serviço`);
     console.log(`Listagens:`)
+    console.log(`13 - Listar Clientes por Gênero`)
     console.log(`0 - Sair`);
 
     let entrada = new Entrada()
@@ -118,6 +118,10 @@ while (execucao) {
             let excluidorServico = new ExcluidorServico(empresa.getServicos)
             excluidorServico.excluir(servico)
             console.log(`\nServiço excluido: ` + servico.nome + `\n`)
+            break;
+        case 13:
+            let listagemClientesGenero = new ListagemClientes(empresa.getClientes)
+            listagemClientesGenero.listarGenero()
             break;
         case 0:
             execucao = false
