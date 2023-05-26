@@ -23,19 +23,22 @@ let execucao = true
 
 while (execucao) {
     console.log(`Opções:\n`);
+    console.log(`Clientes:`)
     console.log(`1  - Cadastrar cliente`);
     console.log(`2  - Listar todos os clientes`);
     console.log(`3  - Atualizar dados do cliente`);
     console.log(`4  - Excluir cliente`);
+    console.log(`Produtos:`)
     console.log(`5  - Cadastrar produto`);
     console.log(`6  - Listar todos os produtos`);
     console.log(`7  - Atualizar produto`);
     console.log(`8  - Excluir produto`);
+    console.log(`Serviços:`)
     console.log(`9  - Cadastrar serviço`);
     console.log(`10 - Listar todos os serviços`);
     console.log(`11 - Atualizar serviço`);
     console.log(`12 - Excluir serviço`);
-
+    console.log(`Listagens:`)
     console.log(`0 - Sair`);
 
     let entrada = new Entrada()
@@ -105,9 +108,7 @@ while (execucao) {
             let servicoAlvo = selecionadorAtualizarServico.selecionar(nomeServicoAtualizar)
 
             let atualizardorServico = new AtualizarServico(empresa.getServicos)
-            let nomeServicoAtualizado = entrada.receberTexto(`Por favor, digite o nome do serviço atualizado: `)
-            let valorServicoAtualizado = entrada.receberNumero(`Por favor, digite o valor do serviço atualizado 00.00: `)
-            atualizardorServico.atualizar(servicoAlvo, nomeServicoAtualizado, valorServicoAtualizado)
+            atualizardorServico.atualizacaoCompleta(servicoAlvo)
             break;
         case 12:
             let selecionadorServico = new SelecionadorServico(empresa.getServicos)
