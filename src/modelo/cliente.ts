@@ -55,4 +55,10 @@ export default class Cliente {
     public adicionarRg(rg: RG): void {
         this.rgs.push(rg)
     }
+    public adicionarProdutoConsumido(produto: Produto): void {
+        this.produtosConsumidos.push(produto)
+    }
+    public adicionarServicoConsumido(servico:Servico): void {
+        this.servicosConsumidos.push(servico)
+    }
 }

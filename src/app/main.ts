@@ -37,8 +37,11 @@ while (execucao) {
     console.log(`10 - Listar todos os serviços`);
     console.log(`11 - Atualizar serviço`);
     console.log(`12 - Excluir serviço`);
+    console.log(`Compras:`)
+    console.log(`13 - Comprar Produto`);
+    console.log(`14 - Comprar Serviço`);
     console.log(`Listagens:`)
-    console.log(`13 - Listar Clientes por Gênero`)
+    console.log(`15 - Listar Clientes por Gênero`)
     console.log(`0 - Sair`);
 
     let entrada = new Entrada()
@@ -120,6 +123,18 @@ while (execucao) {
             console.log(`\nServiço excluido: ` + servico.nome + `\n`)
             break;
         case 13:
+            let selecionadorClienteAlvo = new SelecionadorCliente(empresa.getClientes)
+            let cpfAlvo = entrada.receberTexto(`Por favor, digite o cpf do cliente que deseja atrelar a compra: `)
+            let clienteAlvo = selecionadorClienteAlvo.selecionar(cpfAlvo)
+
+            let selecionadorProdutoAlvo = new SelecionadorProduto(empresa.getProdutos)
+            let nomeProdutoAlvo = entrada.receberTexto(`Por favor, digite o nome do produto que deseja comprar: `)
+            let produtoCompra = selecionadorProdutoAlvo.selecionar(nomeProdutoAlvo)
+            clienteAlvo.adicionarProdutoConsumido(produtoCompra)
+            break;
+        case 14:
+            break;
+        case 15:
             let listagemClientesGenero = new ListagemClientes(empresa.getClientes)
             listagemClientesGenero.listarGenero()
             break;

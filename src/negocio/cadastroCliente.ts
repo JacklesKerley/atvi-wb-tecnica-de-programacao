@@ -22,22 +22,24 @@ export default class CadastroCliente extends Cadastro {
 
         //pega o CPF + data de emissão
         let valorCPF = this.entrada.receberTexto(`Por favor informe o número do CPF: `);
-        let dataCPF = this.entrada.receberTexto(`Por favor informe a data de emissão do CPF, no padrão dd/mm/yyyy: `);
-        let partesDataCPF = dataCPF.split('/')
-        let ano = new Number(partesDataCPF[2].valueOf()).valueOf()
-        let mes = new Number(partesDataCPF[1].valueOf()).valueOf()
-        let dia = new Number(partesDataCPF[0].valueOf()).valueOf()
-        let dataEmissaoCPF = new Date(ano, mes, dia)
+        // let dataCPF = this.entrada.receberTexto(`Por favor informe a data de emissão do CPF, no padrão dd/mm/yyyy: `);
+        // let partesDataCPF = dataCPF.split('/')
+        // let ano = new Number(partesDataCPF[2].valueOf()).valueOf()
+        // let mes = new Number(partesDataCPF[1].valueOf()).valueOf()
+        // let dia = new Number(partesDataCPF[0].valueOf()).valueOf()
+        // let dataEmissaoCPF = new Date(ano, mes, dia)
+        let dataEmissaoCPF = new Date(2020, 10, 10)
         let cpf = new CPF(valorCPF, dataEmissaoCPF);
 
         //pega o RG + data de emissão
         let valorRG = this.entrada.receberTexto(`Por favor informe o número do RG: `)
-        let dataRG = this.entrada.receberTexto(`Por favor informe a data de emissão do RG, no padrão dd/mm/yyyy: `);
-        let partesDataRG = dataRG.split('/')
-        ano = new Number(partesDataRG[2].valueOf()).valueOf()
-        mes = new Number(partesDataRG[1].valueOf()).valueOf()
-        dia = new Number(partesDataRG[0].valueOf()).valueOf()
-        let dataEmissaoRG = new Date(ano, mes, dia)
+        // let dataRG = this.entrada.receberTexto(`Por favor informe a data de emissão do RG, no padrão dd/mm/yyyy: `);
+        // let partesDataRG = dataRG.split('/')
+        // ano = new Number(partesDataRG[2].valueOf()).valueOf()
+        // mes = new Number(partesDataRG[1].valueOf()).valueOf()
+        // dia = new Number(partesDataRG[0].valueOf()).valueOf()
+        // let dataEmissaoRG = new Date(ano, mes, dia)
+        let dataEmissaoRG = new Date(2020, 5, 22)
         let rg = new RG(valorRG, dataEmissaoRG);
         let cliente = new Cliente(nome, sobrenome, cpf,genero);
         this.clientes.push(cliente)
@@ -47,12 +49,13 @@ export default class CadastroCliente extends Cadastro {
         //Cadastra o segundo RG
         if (segundoRg === 'S' || segundoRg === 's') {
             let valorRG2 = this.entrada.receberTexto(`Por favor informe o número do outro RG: `)
-            let dataRG2 = this.entrada.receberTexto(`Por favor informe a data de emissão do outro RG, no padrão dd/mm/yyyy: `);
-            let partesDataRG2 = dataRG2.split('/')
-            ano = new Number(partesDataRG2[2].valueOf()).valueOf()
-            mes = new Number(partesDataRG2[1].valueOf()).valueOf()
-            dia = new Number(partesDataRG2[0].valueOf()).valueOf()
-            let dataEmissaoRG2 = new Date(ano, mes, dia)
+            // let dataRG2 = this.entrada.receberTexto(`Por favor informe a data de emissão do outro RG, no padrão dd/mm/yyyy: `);
+            // let partesDataRG2 = dataRG2.split('/')
+            // ano = new Number(partesDataRG2[2].valueOf()).valueOf()
+            // mes = new Number(partesDataRG2[1].valueOf()).valueOf()
+            // dia = new Number(partesDataRG2[0].valueOf()).valueOf()
+            // let dataEmissaoRG2 = new Date(ano, mes, dia)
+            let dataEmissaoRG2 = new Date(2010, 10, 10)
             let rg2 = new RG(valorRG2, dataEmissaoRG2);
             cliente.adicionarRg(rg2)
         }

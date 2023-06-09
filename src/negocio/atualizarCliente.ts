@@ -1,8 +1,6 @@
 import Entrada from "../io/entrada";
 import Cliente from "../modelo/cliente";
-import Empresa from "../modelo/empresa";
 import Telefone from "../modelo/telefone";
-import SelecionadorCliente from "./selecionadorCliente";
 
 export default class AtualizarCliente {
     private clientes: Array<Cliente>
