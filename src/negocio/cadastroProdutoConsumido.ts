@@ -23,7 +23,7 @@ export default class CadastroProdutoConsumido {
             console.log(produtoCompra)
             clienteAlvo.adicionarProdutoConsumido(produtoCompra)
             
-            let resposta = entrada.receberTexto(`Deseja cadastrar mais um produto? (S/N): `)
+            let resposta = entrada.receberTexto(`Deseja comprar mais um produto? (S/N): `)
             if (resposta.toUpperCase() !== 'S') {
                 continuarCadastro = false;
             }
