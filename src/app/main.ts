@@ -15,6 +15,7 @@ import ExcluidorServico from "../negocio/excluidorServicos";
 import AtualizarServico from "../negocio/atualizarServico";
 import AtualizarProduto from "../negocio/atualizarProduto";
 import AtualizarCliente from "../negocio/atualizarCliente";
+import CadastroProdutoConsumido from "../negocio/cadastroProdutoConsumido";
 
 console.log(`\nBem-vindo ao cadastro de clientes do Grupo World Beauty\n`)
 let empresa = new Empresa()
@@ -127,10 +128,8 @@ while (execucao) {
             let cpfAlvo = entrada.receberTexto(`Por favor, digite o cpf do cliente que deseja atrelar a compra: `)
             let clienteAlvo = selecionadorClienteAlvo.selecionar(cpfAlvo)
 
-            let selecionadorProdutoAlvo = new SelecionadorProduto(empresa.getProdutos)
-            let nomeProdutoAlvo = entrada.receberTexto(`Por favor, digite o nome do produto que deseja comprar: `)
-            let produtoCompra = selecionadorProdutoAlvo.selecionar(nomeProdutoAlvo)
-            clienteAlvo.adicionarProdutoConsumido(produtoCompra)
+            let cadastroProdutoConsumido = new CadastroProdutoConsumido(empresa.getClientes,empresa.getProdutos)
+            cadastroProdutoConsumido.cadastrarProdutoConsumido(clienteAlvo)
             break;
         case 14:
             break;
