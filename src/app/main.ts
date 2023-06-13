@@ -25,6 +25,7 @@ import Produto from "../modelo/produto";
 import Servico from "../modelo/servico";
 import Listagem10ClientesConsumidores from "../negocio/listagem10ClientesConsumidores";
 import ProdutosOuServicosMaisConsumidos from "../negocio/listagemProdutosOuServicosMaisConsumidos";
+import ListagemProdutosOuServicosMaisConsumidosPorGenero from "../negocio/listagemProdutosServicosGenero";
 
 console.log(`\nBem-vindo ao cadastro de clientes do Grupo World Beauty\n`)
 let empresa = new Empresa()
@@ -286,6 +287,8 @@ while (execucao) {
             produtosOuServicosMaisConsumidos.listar()
             break;
         case 18:
+            let listagemProdutoServicoGenero = new ListagemProdutosOuServicosMaisConsumidosPorGenero(empresa.getClientes)
+            listagemProdutoServicoGenero.listar()
             break;
         case 19:
             break;
