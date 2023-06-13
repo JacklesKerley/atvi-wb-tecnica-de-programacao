@@ -22,6 +22,7 @@ export default class CadastroServicoConsumido {
             let servicoCompra = selecionadorServicoAlvo.selecionar(nomeServicoAlvo)
             clienteAlvo.adicionarServicoConsumido(servicoCompra)
             clienteAlvo.quantidadeConsumida++;
+            clienteAlvo.valorConsumido += servicoCompra.valor
 
             
             let resposta = entrada.receberTexto(`Deseja comprar mais um servico? (S/N): `)

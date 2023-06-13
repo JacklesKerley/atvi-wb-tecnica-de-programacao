@@ -27,6 +27,7 @@ import Listagem10ClientesConsumidores from "../negocio/listagem10ClientesConsumi
 import ProdutosOuServicosMaisConsumidos from "../negocio/listagemProdutosOuServicosMaisConsumidos";
 import ListagemProdutosOuServicosMaisConsumidosPorGenero from "../negocio/listagemProdutosServicosGenero";
 import Listagem10ClientesMenosConsumidores from "../negocio/listagem10ClientesMenosConsumidores";
+import Listagem5ClientesValorConsumido from "../negocio/listagem5ClientesValor";
 
 console.log(`\nBem-vindo ao cadastro de clientes do Grupo World Beauty\n`)
 let empresa = new Empresa()
@@ -296,6 +297,8 @@ while (execucao) {
             listagem10MenosConsumidores.listarClientesMenosConsumidores()
             break;
         case 20:
+            let listagem5ClientesValor = new Listagem5ClientesValorConsumido(empresa.getClientes)
+            listagem5ClientesValor.listarClientesMaisConsumiramPorValor()
             break;
         case 0:
             execucao = false

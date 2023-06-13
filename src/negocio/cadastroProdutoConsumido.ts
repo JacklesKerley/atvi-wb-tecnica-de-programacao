@@ -22,6 +22,7 @@ export default class CadastroProdutoConsumido {
             let produtoCompra = selecionadorProdutoAlvo.selecionar(nomeProdutoAlvo)
             clienteAlvo.adicionarProdutoConsumido(produtoCompra)
             clienteAlvo.quantidadeConsumida++;
+            clienteAlvo.valorConsumido += produtoCompra.valor
 
             
             let resposta = entrada.receberTexto(`Deseja comprar mais um produto? (S/N): `)
