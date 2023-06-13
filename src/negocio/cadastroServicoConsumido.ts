@@ -20,8 +20,9 @@ export default class CadastroServicoConsumido {
         while (continuarCadastro) {
             let nomeServicoAlvo = entrada.receberTexto(`Por favor, digite o nome do serviço que deseja comprar: `)
             let servicoCompra = selecionadorServicoAlvo.selecionar(nomeServicoAlvo)
-            console.log(servicoCompra)
             clienteAlvo.adicionarServicoConsumido(servicoCompra)
+            clienteAlvo.quantidadeConsumida++;
+
             
             let resposta = entrada.receberTexto(`Deseja comprar mais um servico? (S/N): `)
             if (resposta.toUpperCase() !== 'S') {

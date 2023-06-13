@@ -23,93 +23,94 @@ import RG from "../modelo/rg";
 import Telefone from "../modelo/telefone";
 import Produto from "../modelo/produto";
 import Servico from "../modelo/servico";
+import Listagem10ClientesConsumidores from "../negocio/listagem10ClientesConsumidores";
 
 console.log(`\nBem-vindo ao cadastro de clientes do Grupo World Beauty\n`)
 let empresa = new Empresa()
 let execucao = true
 
 //Cadastro de alguns clientes
-let cli1 = new Cliente("João","Silva",new CPF("1",new Date()),"M")
-let rg1 = new RG("1",new Date())
-let tel1 = new Telefone("12","11111111")
+let cli1 = new Cliente("João", "Silva", new CPF("1", new Date()), "M")
+let rg1 = new RG("1", new Date())
+let tel1 = new Telefone("12", "11111111")
 empresa.getClientes.push(cli1)
 cli1.adicionarRg(rg1)
 cli1.adicionarTelefone(tel1)
 
-let cli2 = new Cliente("Gabriel","Souza",new CPF("2",new Date()),"M")
-let rg2 = new RG("2",new Date())
-let tel2 = new Telefone("12","22222222")
+let cli2 = new Cliente("Gabriel", "Souza", new CPF("2", new Date()), "M")
+let rg2 = new RG("2", new Date())
+let tel2 = new Telefone("12", "22222222")
 empresa.getClientes.push(cli2)
 cli2.adicionarRg(rg2)
 cli2.adicionarTelefone(tel2)
 
-let cli3 = new Cliente("José","Galvao",new CPF("3",new Date()),"M")
-let rg3 = new RG("3",new Date())
-let tel3 = new Telefone("12","33333333")
+let cli3 = new Cliente("José", "Galvao", new CPF("3", new Date()), "M")
+let rg3 = new RG("3", new Date())
+let tel3 = new Telefone("12", "33333333")
 empresa.getClientes.push(cli3)
 cli3.adicionarRg(rg3)
 cli3.adicionarTelefone(tel3)
 
-let cli4 = new Cliente("Jessica","Maria",new CPF("4",new Date()),"F")
-let rg4 = new RG("4",new Date())
-let tel4 = new Telefone("12","44444444")
+let cli4 = new Cliente("Jessica", "Maria", new CPF("4", new Date()), "F")
+let rg4 = new RG("4", new Date())
+let tel4 = new Telefone("12", "44444444")
 empresa.getClientes.push(cli4)
 cli4.adicionarRg(rg4)
 cli4.adicionarTelefone(tel4)
 
-let cli5 = new Cliente("Julia","Vania",new CPF("5",new Date()),"F")
-let rg5 = new RG("5",new Date())
-let tel5 = new Telefone("12","55555555")
+let cli5 = new Cliente("Julia", "Vania", new CPF("5", new Date()), "F")
+let rg5 = new RG("5", new Date())
+let tel5 = new Telefone("12", "55555555")
 empresa.getClientes.push(cli5)
 cli5.adicionarRg(rg5)
 cli5.adicionarTelefone(tel5)
 
-let cli6 = new Cliente("Matheus","Monteiro",new CPF("6",new Date()),"M")
-let rg6 = new RG("6",new Date())
-let tel6 = new Telefone("12","66666666")
+let cli6 = new Cliente("Matheus", "Monteiro", new CPF("6", new Date()), "M")
+let rg6 = new RG("6", new Date())
+let tel6 = new Telefone("12", "66666666")
 empresa.getClientes.push(cli6)
 cli6.adicionarRg(rg6)
 cli6.adicionarTelefone(tel6)
 
-let cli7 = new Cliente("Mario","Lima",new CPF("7",new Date()),"M")
-let rg7 = new RG("7",new Date())
-let tel7 = new Telefone("12","7777777")
+let cli7 = new Cliente("Mario", "Lima", new CPF("7", new Date()), "M")
+let rg7 = new RG("7", new Date())
+let tel7 = new Telefone("12", "7777777")
 empresa.getClientes.push(cli7)
 cli7.adicionarRg(rg7)
 cli7.adicionarTelefone(tel7)
 
-let cli8 = new Cliente("Laura","Nogueira",new CPF("8",new Date()),"F")
-let rg8 = new RG("8",new Date())
-let tel8 = new Telefone("12","88888888")
+let cli8 = new Cliente("Laura", "Nogueira", new CPF("8", new Date()), "F")
+let rg8 = new RG("8", new Date())
+let tel8 = new Telefone("12", "88888888")
 empresa.getClientes.push(cli8)
 cli8.adicionarRg(rg8)
 cli8.adicionarTelefone(tel8)
 
-let cli9 = new Cliente("Leticia","Lima",new CPF("9",new Date()),"F")
-let rg9 = new RG("9",new Date())
-let tel9 = new Telefone("12","99999999")
+let cli9 = new Cliente("Leticia", "Lima", new CPF("9", new Date()), "F")
+let rg9 = new RG("9", new Date())
+let tel9 = new Telefone("12", "99999999")
 empresa.getClientes.push(cli9)
 cli9.adicionarRg(rg9)
 cli9.adicionarTelefone(tel9)
 
-let cli10 = new Cliente("Simone","Oliveira",new CPF("10",new Date()),"F")
-let rg10 = new RG("10",new Date())
-let tel10 = new Telefone("12","10101010")
+let cli10 = new Cliente("Simone", "Oliveira", new CPF("10", new Date()), "F")
+let rg10 = new RG("10", new Date())
+let tel10 = new Telefone("12", "10101010")
 empresa.getClientes.push(cli10)
 cli10.adicionarRg(rg10)
 cli10.adicionarTelefone(tel10)
 
 //Cadastro de alguns produtos
-let pro1 = new Produto("Shampoo",20.99)
-let pro2 = new Produto("Gel",10.99)
-let pro3 = new Produto("Condicionador",20.99)
-let pro4 = new Produto("Pente",15.99)
-let pro5 = new Produto("Creme",10.99)
-let pro6 = new Produto("Fixadores",24.99)
-let pro7 = new Produto("Esmalte",10.99)
-let pro8 = new Produto("Secador de cabelo",200.00)
-let pro9 = new Produto("Gilete",20.99)
-let pro10 = new Produto("Minoxidil",30.00)
+let pro1 = new Produto("Shampoo", 20.99)
+let pro2 = new Produto("Gel", 10.99)
+let pro3 = new Produto("Condicionador", 20.99)
+let pro4 = new Produto("Pente", 15.99)
+let pro5 = new Produto("Creme", 10.99)
+let pro6 = new Produto("Fixadores", 24.99)
+let pro7 = new Produto("Esmalte", 10.99)
+let pro8 = new Produto("Secador de cabelo", 200.00)
+let pro9 = new Produto("Gilete", 20.99)
+let pro10 = new Produto("Minoxidil", 30.00)
 
 empresa.getProdutos.push(pro1)
 empresa.getProdutos.push(pro2)
@@ -123,16 +124,16 @@ empresa.getProdutos.push(pro9)
 empresa.getProdutos.push(pro10)
 
 //Cadastro de serviços
-let s1 = new Servico("Corte",25.00)
-let s2 = new Servico("Corte + Barba",50.00)
-let s3 = new Servico("Sobrancelha",60.00)
-let s4 = new Servico("Botox",80.00)
-let s5 = new Servico("Pedicure",40.00)
-let s6 = new Servico("Limpeza de Pele",80.00)
-let s7 = new Servico("Maquiagem",70.00)
-let s8 = new Servico("Esfoliação",60.00)
-let s9 = new Servico("Escova",65.00)
-let s10 = new Servico("Hidratação Facial",80.00)
+let s1 = new Servico("Corte", 25.00)
+let s2 = new Servico("Corte + Barba", 50.00)
+let s3 = new Servico("Sobrancelha", 60.00)
+let s4 = new Servico("Botox", 80.00)
+let s5 = new Servico("Pedicure", 40.00)
+let s6 = new Servico("Limpeza de Pele", 80.00)
+let s7 = new Servico("Maquiagem", 70.00)
+let s8 = new Servico("Esfoliação", 60.00)
+let s9 = new Servico("Escova", 65.00)
+let s10 = new Servico("Hidratação Facial", 80.00)
 
 empresa.getServicos.push(s1)
 empresa.getServicos.push(s2)
@@ -260,15 +261,15 @@ while (execucao) {
             let cpfAlvo = entrada.receberTexto(`Por favor, digite o cpf do cliente que deseja atrelar a compra: `)
             let clienteAlvo = selecionadorClienteAlvo.selecionar(cpfAlvo)
 
-            let cadastroProdutoConsumido = new CadastroProdutoConsumido(empresa.getClientes,empresa.getProdutos)
+            let cadastroProdutoConsumido = new CadastroProdutoConsumido(empresa.getClientes, empresa.getProdutos)
             cadastroProdutoConsumido.cadastrarProdutoConsumido(clienteAlvo)
             break;
         case 14:
-             selecionadorClienteAlvo = new SelecionadorCliente(empresa.getClientes)
-             cpfAlvo = entrada.receberTexto(`Por favor, digite o cpf do cliente que deseja atrelar a compra: `)
-             clienteAlvo = selecionadorClienteAlvo.selecionar(cpfAlvo)
+            selecionadorClienteAlvo = new SelecionadorCliente(empresa.getClientes)
+            cpfAlvo = entrada.receberTexto(`Por favor, digite o cpf do cliente que deseja atrelar a compra: `)
+            clienteAlvo = selecionadorClienteAlvo.selecionar(cpfAlvo)
 
-            let cadastroServicoConsumido = new CadastroServicoConsumido(empresa.getClientes,empresa.getServicos)
+            let cadastroServicoConsumido = new CadastroServicoConsumido(empresa.getClientes, empresa.getServicos)
             cadastroServicoConsumido.cadastrarServicoConsumido(clienteAlvo)
             break;
         case 15:
@@ -276,6 +277,8 @@ while (execucao) {
             listagemClientesGenero.listarGenero()
             break;
         case 16:
+            const listagem10Clientes = new Listagem10ClientesConsumidores(empresa.getClientes);
+            listagem10Clientes.listarClientesMaisConsumidores();
             break;
         case 17:
             break;

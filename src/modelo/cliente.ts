@@ -14,6 +14,7 @@ export default class Cliente {
     private telefones: Array<Telefone>
     private produtosConsumidos: Array<Produto>
     private servicosConsumidos: Array<Servico>
+    public quantidadeConsumida: number
 
     constructor(nome: string, sobrenome: string, cpf: CPF, genero:string) {
         this.nome = nome
@@ -25,6 +26,7 @@ export default class Cliente {
         this.telefones = []
         this.produtosConsumidos = []
         this.servicosConsumidos = []
+        this.quantidadeConsumida = 0
     }
 
     public get getCpf(): CPF {

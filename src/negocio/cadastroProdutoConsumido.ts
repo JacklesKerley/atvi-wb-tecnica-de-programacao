@@ -20,8 +20,9 @@ export default class CadastroProdutoConsumido {
         while (continuarCadastro) {
             let nomeProdutoAlvo = entrada.receberTexto(`Por favor, digite o nome do produto que deseja comprar: `)
             let produtoCompra = selecionadorProdutoAlvo.selecionar(nomeProdutoAlvo)
-            console.log(produtoCompra)
             clienteAlvo.adicionarProdutoConsumido(produtoCompra)
+            clienteAlvo.quantidadeConsumida++;
+
             
             let resposta = entrada.receberTexto(`Deseja comprar mais um produto? (S/N): `)
             if (resposta.toUpperCase() !== 'S') {
