@@ -23,13 +23,5 @@ const Cliente = database.define('cliente', {
   timestamps: false,
 });
 
-Cliente.sync()
-  .then(() => {
-    console.log('Tabela cliente criada com sucesso.');
-  })
-  .catch((error) => {
-    console.error('Erro ao criar tabela cliente:', error);
-  });
-
 export default Cliente;
 
