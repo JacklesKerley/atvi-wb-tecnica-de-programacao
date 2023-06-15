@@ -1,0 +1,12 @@
+.caixa-btn-cadastros{
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn-procurar-editar-excluir {
+    padding: 1px 0;
+    color: #26a69a;
+    border: none;
+    display: block;
+    background: none;
+}

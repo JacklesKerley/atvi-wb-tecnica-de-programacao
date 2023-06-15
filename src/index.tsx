@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import Roteador from './componentes/roteador';
 import reportWebVitals from './reportWebVitals';
 
+import './asserts/style.css';
+
 ReactDOM.render(
   <React.StrictMode>
     <Roteador />

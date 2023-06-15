@@ -9,8 +9,8 @@ export default class FormularioCadastroCliente extends Component<props> {
     render() {
         let estiloBotao = `btn waves-effect waves-light ${this.props.tema}`
         return (
-            <div className="row">
-                <form className="col s12">
+            <div className="container">
+                <form>
                     <div className="row">
                         <div className="input-field col s6">
                             <input id="first_name" type="text" className="validate" />

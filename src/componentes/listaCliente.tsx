@@ -22,14 +22,14 @@ export default class ListaCliente extends Component<props> {
                 <ul className="collection">
                     <li className="collection-item valign-wrapper row">
                         <p className="col s11" style={{ color: '#26a69a' }}>Cliente 1</p>
-                        <p className="col s1" style={{ display: 'flex', justifyContent: 'space-around' }}>
-                            <button className="waves-effect waves-light" style={{ padding: '1px 0', color: '#26a69a', border: 'none', display: 'block', background: 'none' }}>
+                        <p className="col s1 caixa-btn-cadastros">
+                            <button className="waves-effect waves-light btn-procurar-editar-excluir">
                                 <FontAwesomeIcon icon={faMagnifyingGlass} />
                             </button>
-                            <button className="waves-effect waves-light" style={{ padding: '1px 0', color: '#26a69a', border: 'none', display: 'block', background: 'none' }}>
+                            <button className="waves-effect waves-light btn-procurar-editar-excluir">
                                 <FontAwesomeIcon icon={faPencil} />
                             </button>
-                            <button className="waves-effect waves-light" style={{ padding: '1px 0', color: '#26a69a', border: 'none', display: 'block', background: 'none' }}>
+                            <button className="waves-effect waves-light btn-procurar-editar-excluir">
                                 <FontAwesomeIcon icon={faTrashCan} />
                             </button>
 
@@ -37,42 +37,42 @@ export default class ListaCliente extends Component<props> {
                     </li>
                     <li className="collection-item valign-wrapper row">
                         <p className="col s11" style={{ color: '#26a69a' }}>Cliente 2</p>
-                        <p className="col s1" style={{ display: 'flex', justifyContent: 'space-around' }}>
-                            <button className="waves-effect waves-light" style={{ padding: '1px 0', color: '#26a69a', border: 'none', display: 'block', background: 'none' }}>
+                        <p className="col s1 caixa-btn-cadastros">
+                            <button className="waves-effect waves-light btn-procurar-editar-excluir">
                                 <FontAwesomeIcon icon={faMagnifyingGlass} />
                             </button>
-                            <button className="waves-effect waves-light" style={{ padding: '1px 0', color: '#26a69a', border: 'none', display: 'block', background: 'none' }}>
+                            <button className="waves-effect waves-light btn-procurar-editar-excluir">
                                 <FontAwesomeIcon icon={faPencil} />
                             </button>
-                            <button className="waves-effect waves-light" style={{ padding: '1px 0', color: '#26a69a', border: 'none', display: 'block', background: 'none' }}>
+                            <button className="waves-effect waves-light btn-procurar-editar-excluir">
                                 <FontAwesomeIcon icon={faTrashCan} />
                             </button>
                         </p>
                     </li>
                     <li className="collection-item valign-wrapper row">
                         <p className="col s11" style={{ color: '#26a69a' }}>Cliente 3</p>
-                        <p className="col s1" style={{ display: 'flex', justifyContent: 'space-around' }}>
-                            <button className="waves-effect waves-light" style={{ padding: '1px 0', color: '#26a69a', border: 'none', display: 'block', background: 'none' }}>
+                        <p className="col s1 caixa-btn-cadastros">
+                            <button className="waves-effect waves-light btn-procurar-editar-excluir">
                                 <FontAwesomeIcon icon={faMagnifyingGlass} />
                             </button>
-                            <button className="waves-effect waves-light" style={{ padding: '1px 0', color: '#26a69a', border: 'none', display: 'block', background: 'none' }}>
+                            <button className="waves-effect waves-light btn-procurar-editar-excluir">
                                 <FontAwesomeIcon icon={faPencil} />
                             </button>
-                            <button className="waves-effect waves-light" style={{ padding: '1px 0', color: '#26a69a', border: 'none', display: 'block', background: 'none' }}>
+                            <button className="waves-effect waves-light btn-procurar-editar-excluir">
                                 <FontAwesomeIcon icon={faTrashCan} />
                             </button>
                         </p>
                     </li>
                     <li className="collection-item valign-wrapper row">
                         <p className="col s11" style={{ color: '#26a69a' }}>Cliente 4</p>
-                        <p className="col s1" style={{ display: 'flex', justifyContent: 'space-around' }}>
-                            <button className="waves-effect waves-light" style={{ padding: '1px 0', color: '#26a69a', border: 'none', display: 'block', background: 'none' }}>
+                        <p className="col s1 caixa-btn-cadastros">
+                            <button className="waves-effect waves-light btn-procurar-editar-excluir">
                                 <FontAwesomeIcon icon={faMagnifyingGlass} />
                             </button>
-                            <button className="waves-effect waves-light" style={{ padding: '1px 0', color: '#26a69a', border: 'none', display: 'block', background: 'none' }}>
+                            <button className="waves-effect waves-light btn-procurar-editar-excluir">
                                 <FontAwesomeIcon icon={faPencil} />
                             </button>
-                            <button className="waves-effect waves-light" style={{ padding: '1px 0', color: '#26a69a', border: 'none', display: 'block', background: 'none' }}>
+                            <button className="waves-effect waves-light btn-procurar-editar-excluir">
                                 <FontAwesomeIcon icon={faTrashCan} />
                             </button>
                         </p>
