@@ -1,6 +1,7 @@
 import express from "express";
 import bodyParser from "body-parser";
 import sequelize from "./database"; 
+import router from "./routes";
 import  Cliente  from "./models/cliente"; 
 import RG from "./models/rg"
 import Telefone from "./models/telefone"
@@ -14,8 +15,7 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 
-
-
+app.use(router);
 
 (async () => {
   try {
