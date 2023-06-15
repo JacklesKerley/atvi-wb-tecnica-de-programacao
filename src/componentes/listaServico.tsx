@@ -9,14 +9,22 @@ type props = {
 
 export default class ListaServico extends Component<props> {
     render() {
-        let estilo = `collection-item active ${this.props.tema}`
         return (
-            <div className="collection">
-                <a className="collection-item">Servico 1</a>
-                <a className={estilo}>Servico 2</a>
-                <a className="collection-item">Servico 3</a>
-                <a className="collection-item">Servico 4</a>
-            </div>
+            <div className="container">
+                <div className="valign-wrapper row">
+                    <h5 className="col s9">Lista de Serviços</h5>
+                    <div className="input-field col s3">
+                        <input type="text" placeholder="Buscar"></input>
+                    
+                    </div>
+                </div>
+                <div className="collection">
+                    <a className="collection-item">Servico 1</a>
+                    <a className="collection-item">Servico 2</a>
+                    <a className="collection-item">Servico 3</a>
+                    <a className="collection-item">Servico 4</a>
+                </div>
+            </div >
         )
     }
 }

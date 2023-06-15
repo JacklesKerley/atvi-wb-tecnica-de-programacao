@@ -30,7 +30,7 @@ export default class Roteador extends Component<{}, state> {
             <BarraNavegacao
                 seletorView={this.selecionarView}
                 tema="purple lighten-4"
-                botoes={['Clientes', 'Serviços', 'Cadastros']}
+                botoes={['Cadastros', 'Clientes', 'Serviços']}
             />
         )
 
