@@ -3,13 +3,17 @@ import { Component } from "react";
 import 'materialize-css/dist/css/materialize.min.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPencil, faTrashCan, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
-
+import M from 'materialize-css';
 
 type props = {
     tema: string
 }
 
 export default class ListaServico extends Component<props> {
+    componentDidMount() {
+        M.AutoInit();
+    }
+
     render() {
         return (
             <div className="container">
@@ -18,6 +22,14 @@ export default class ListaServico extends Component<props> {
                     <div className="col s3">
                         <input type="text" placeholder="Buscar"></input>
                     </div>
+                </div>
+                <div className="">
+                    <select>
+                        <option>Selecione</option>
+                        <option>Mais consumidos</option>
+                        <option>Menos consumidos</option>
+                        <option>Mais consumidos por Gênero</option>
+                    </select>
                 </div>
                 <ul className="collection">
                     <li className="collection-item valign-wrapper row">
