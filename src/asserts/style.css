@@ -1,0 +1,65 @@
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+}
+
+.home > div > p {
+    font-size: 900%;
+    font-weight: bolder;
+}
+
+.home > div > p > strong {
+    color: #26a69a;
+    font-weight: 800;
+}
+
+.btn-cadastrar {
+    background-color: #26a69a;
+}
+
+.btn-cadastrar:hover {
+    opacity: 0.7;
+}
+
+.btn-cadastrar:active {
+    color: grey;
+}
+
+.caixa-btn-pg-cadastros{
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn-procurar-editar-excluir {
+    padding: 1px 0;
+    color: #26a69a;
+    border: none;
+    display: block;
+    background: none;
+}
+
+.btn-procurar-editar-excluir:hover {
+    cursor: pointer;
+    background: none;
+    opacity: 0.7;
+}
+
+.btn-procurar-editar-excluir:active {
+    color: grey;
+}
+
+.navbar {
+    background: rgba(146, 146, 146, 0.796);
+}
+.navbar-2 {
+    background: none;
+    border: none;
+    box-shadow: none;
+}
+
+.titulo {
+    /* padding-left: 5px; */
+    margin: 6vh 0 0 0;
+}

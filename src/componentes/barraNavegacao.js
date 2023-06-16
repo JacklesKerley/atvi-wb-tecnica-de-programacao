@@ -16,18 +16,20 @@ export default function BarraNavegacao(props) {
 
     return (
         <>
-            <nav className={props.tema}>
-                <div className="nav-wrapper">
-                    <a className="brand-logo">WB</a>
-                    <a data-target="mobile-menu" className="sidenav-trigger"><i className="material-icons">menu</i></a>
-                    <ul className="right hide-on-med-and-down">
-                        {gerarListaBotoes()}
-                    </ul>
-                </div>
-            </nav>
-            <ul className="sidenav" id="mobile-menu">
-                {gerarListaBotoes()}
-            </ul>
+            <div className="navbar">
+                <nav className="navbar-2 container">
+                    <div className="nav-wrapper">
+                        <a className="brand-logo">WB</a>
+                        <a data-target="mobile-menu" className="sidenav-trigger"><i className="material-icons">menu</i></a>
+                        <ul className="right hide-on-med-and-down">
+                            {gerarListaBotoes()}
+                        </ul>
+                    </div>
+                </nav>
+                <ul className="sidenav" id="mobile-menu">
+                    {gerarListaBotoes()}
+                </ul>
+            </div>
         </>
     )
 }
