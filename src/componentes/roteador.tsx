@@ -1,6 +1,9 @@
 import { Component } from "react";
 import BarraNavegacao from "./barraNavegacao";
+import Home from "./home";
 import FormularioCadastroCliente from "./formularioCadastroCliente";
+import FormularioCadastroServico from "./formularioCadastroServico";
+import FormularioCadastroProduto from "./formularioCadastroProduto";
 import ListaCliente from "./listaCliente";
 import ListaServico from "./listaServico";
 import ListaProduto from "./listaProduto";
@@ -13,7 +16,7 @@ export default class Roteador extends Component<{}, state> {
     constructor(props: {} | Readonly<{}>) {
         super(props)
         this.state = {
-            tela: 'Clientes'
+            tela: 'Home'
         }
         this.selecionarView = this.selecionarView.bind(this)
     }
@@ -31,17 +34,45 @@ export default class Roteador extends Component<{}, state> {
             <BarraNavegacao
                 seletorView={this.selecionarView}
                 tema="purple lighten-4"
-                botoes={['Cadastros', 'Clientes', 'Serviços', 'Produtos']}
+                botoes={['Home', 'Cadastro de Cliente', 'Cadastro de Serviços', 'Cadastro de Produtos', 'Clientes', 'Serviços', 'Produtos']}
             />
         )
 
-        if (this.state.tela === 'Clientes') {
+        if (this.state.tela === 'Home') {
+            return (
+                <>
+                    {barraNavegacao}
+                    <Home tema="purple lighten-4" />
+                </>
+            );
+        } else if (this.state.tela === 'Cadastro de Cliente') {
+            return (
+                <>
+                    {barraNavegacao}
+                    <FormularioCadastroCliente tema="purple lighten-4" />
+                </>
+            );
+        } else if (this.state.tela === 'Cadastro de Serviços') {
+            return (
+                <>
+                    {barraNavegacao}
+                    <FormularioCadastroServico tema="purple lighten-4" />
+                </>
+            );
+        } else if (this.state.tela === 'Cadastro de Produtos') {
+            return (
+                <>
+                    {barraNavegacao}
+                    <FormularioCadastroProduto tema="purple lighten-4" />
+                </>
+            );
+        } else if (this.state.tela === 'Clientes') {
             return (
                 <>
                     {barraNavegacao}
                     <ListaCliente tema="purple lighten-4" />
                 </>
-            )
+            );
         } else if (this.state.tela === 'Serviços') {
             return (
                 <>
@@ -60,7 +91,7 @@ export default class Roteador extends Component<{}, state> {
             return (
                 <>
                     {barraNavegacao}
-                    <FormularioCadastroCliente tema="purple lighten-4" />
+                    <Home tema="purple lighten-4" />
                 </>
             )
         }

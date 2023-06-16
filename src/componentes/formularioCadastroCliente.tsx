@@ -7,7 +7,6 @@ type props = {
 export default class FormularioCadastroCliente extends Component<props> {
     
     render() {
-        let estiloBotao = `btn waves-effect waves-light ${this.props.tema}`
         return (
             <div className="container">
                 <div className="valign-wrapper row titulo">
