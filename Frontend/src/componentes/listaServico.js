@@ -1,12 +1,29 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPencil, faTrashCan, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import 'materialize-css/dist/css/materialize.min.css';
 import M from 'materialize-css';
+import axios from 'axios';
 
 export default function ListaServico(props) {
+    const [servicos, setServicos] = useState([]); 
+
     useEffect(() => {
         M.AutoInit();
+    }, []);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.get('http://localhost:3000/servico');
+                const data = response.data;
+                setServicos(data); 
+            } catch (error) {
+                console.error(error);
+            }
+        };
+
+        fetchData();
     }, []);
 
     return (
@@ -26,64 +43,23 @@ export default function ListaServico(props) {
                 </select>
             </div>
             <ul className="collection">
-                <li className="collection-item valign-wrapper row">
-                    <p className="col s11" style={{ color: '#26a69a' }}>Serviço 1</p>
-                    <p className="col s1 caixa-btn-pg-cadastros">
-                        <a className="btn-procurar-editar-excluir">
-                            <FontAwesomeIcon icon={faMagnifyingGlass} />
-                        </a>
-                        <a className="btn-procurar-editar-excluir">
-                            <FontAwesomeIcon icon={faPencil} />
-                        </a>
-                        <a className="btn-procurar-editar-excluir">
-                            <FontAwesomeIcon icon={faTrashCan} />
-                        </a>
-
-                    </p>
-                </li>
-                <li className="collection-item valign-wrapper row">
-                    <p className="col s11" style={{ color: '#26a69a' }}>Serviço 2</p>
-                    <p className="col s1 caixa-btn-pg-cadastros">
-                        <a className="btn-procurar-editar-excluir">
-                            <FontAwesomeIcon icon={faMagnifyingGlass} />
-                        </a>
-                        <a className="btn-procurar-editar-excluir">
-                            <FontAwesomeIcon icon={faPencil} />
-                        </a>
-                        <a className="btn-procurar-editar-excluir">
-                            <FontAwesomeIcon icon={faTrashCan} />
-                        </a>
-                    </p>
-                </li>
-                <li className="collection-item valign-wrapper row">
-                    <p className="col s11" style={{ color: '#26a69a' }}>Serviço 3</p>
-                    <p className="col s1 caixa-btn-pg-cadastros">
-                        <a className="btn-procurar-editar-excluir">
-                            <FontAwesomeIcon icon={faMagnifyingGlass} />
-                        </a>
-                        <a className="btn-procurar-editar-excluir">
-                            <FontAwesomeIcon icon={faPencil} />
-                        </a>
-                        <a className="btn-procurar-editar-excluir">
-                            <FontAwesomeIcon icon={faTrashCan} />
-                        </a>
-                    </p>
-                </li>
-                <li className="collection-item valign-wrapper row">
-                    <p className="col s11" style={{ color: '#26a69a' }}>Serviço 4</p>
-                    <p className="col s1 caixa-btn-pg-cadastros">
-                        <a className="btn-procurar-editar-excluir">
-                            <FontAwesomeIcon icon={faMagnifyingGlass} />
-                        </a>
-                        <a className="btn-procurar-editar-excluir">
-                            <FontAwesomeIcon icon={faPencil} />
-                        </a>
-                        <a className="btn-procurar-editar-excluir">
-                            <FontAwesomeIcon icon={faTrashCan} />
-                        </a>
-                    </p>
-                </li>
+                {servicos.map((servico, index) => (
+                    <li key={index} className="collection-item valign-wrapper row">
+                        <p className="col s11" style={{ color: '#26a69a' }}>{servico.nome}</p>
+                        <p className="col s1 caixa-btn-pg-cadastros">
+                            <a className="btn-procurar-editar-excluir">
+                                <FontAwesomeIcon icon={faMagnifyingGlass} />
+                            </a>
+                            <a className="btn-procurar-editar-excluir">
+                                <FontAwesomeIcon icon={faPencil} />
+                            </a>
+                            <a className="btn-procurar-editar-excluir">
+                                <FontAwesomeIcon icon={faTrashCan} />
+                            </a>
+                        </p>
+                    </li>
+                ))}
             </ul>
-        </div >
-    )
+        </div>
+    );
 }

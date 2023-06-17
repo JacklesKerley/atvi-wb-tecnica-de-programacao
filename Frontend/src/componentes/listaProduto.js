@@ -1,15 +1,32 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPencil, faTrashCan, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import 'materialize-css/dist/css/materialize.min.css';
 import M from 'materialize-css';
+import axios from 'axios';
 
 export default function ListaProduto(props) {
-    useEffect(() => {
-        M.AutoInit(); 
-      }, []);
+    const [produtos, setProdutos] = useState([]); // Estado para armazenar os dados dos produtos
 
-      return (
+    useEffect(() => {
+        M.AutoInit();
+    }, []);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.get('http://localhost:3000/produto');
+                const data = response.data;
+                setProdutos(data); // Atualiza o estado com os dados dos produtos
+            } catch (error) {
+                console.error(error);
+            }
+        };
+
+        fetchData();
+    }, []);
+
+    return (
         <div className="container">
             <div className="valign-wrapper row titulo">
                 <h5 className="col s9">Lista de Produtos</h5>
@@ -26,64 +43,23 @@ export default function ListaProduto(props) {
                 </select>
             </div>
             <ul className="collection">
-                <li className="collection-item valign-wrapper row">
-                    <p className="col s11" style={{ color: '#26a69a' }}>Produto 1</p>
-                    <p className="col s1 caixa-btn-pg-cadastros">
-                        <a className="btn-procurar-editar-excluir">
-                            <FontAwesomeIcon icon={faMagnifyingGlass} />
-                        </a>
-                        <a className="btn-procurar-editar-excluir">
-                            <FontAwesomeIcon icon={faPencil} />
-                        </a>
-                        <a className="btn-procurar-editar-excluir">
-                            <FontAwesomeIcon icon={faTrashCan} />
-                        </a>
-
-                    </p>
-                </li>
-                <li className="collection-item valign-wrapper row">
-                    <p className="col s11" style={{ color: '#26a69a' }}>Produto 2</p>
-                    <p className="col s1 caixa-btn-pg-cadastros">
-                        <a className="btn-procurar-editar-excluir">
-                            <FontAwesomeIcon icon={faMagnifyingGlass} />
-                        </a>
-                        <a className="btn-procurar-editar-excluir">
-                            <FontAwesomeIcon icon={faPencil} />
-                        </a>
-                        <a className="btn-procurar-editar-excluir">
-                            <FontAwesomeIcon icon={faTrashCan} />
-                        </a>
-                    </p>
-                </li>
-                <li className="collection-item valign-wrapper row">
-                    <p className="col s11" style={{ color: '#26a69a' }}>Produto 3</p>
-                    <p className="col s1 caixa-btn-pg-cadastros">
-                        <a className="btn-procurar-editar-excluir">
-                            <FontAwesomeIcon icon={faMagnifyingGlass} />
-                        </a>
-                        <a className="btn-procurar-editar-excluir">
-                            <FontAwesomeIcon icon={faPencil} />
-                        </a>
-                        <a className="btn-procurar-editar-excluir">
-                            <FontAwesomeIcon icon={faTrashCan} />
-                        </a>
-                    </p>
-                </li>
-                <li className="collection-item valign-wrapper row">
-                    <p className="col s11" style={{ color: '#26a69a' }}>Produto 4</p>
-                    <p className="col s1 caixa-btn-pg-cadastros">
-                        <a className="btn-procurar-editar-excluir">
-                            <FontAwesomeIcon icon={faMagnifyingGlass} />
-                        </a>
-                        <a className="btn-procurar-editar-excluir">
-                            <FontAwesomeIcon icon={faPencil} />
-                        </a>
-                        <a className="btn-procurar-editar-excluir">
-                            <FontAwesomeIcon icon={faTrashCan} />
-                        </a>
-                    </p>
-                </li>
+                {produtos.map((produto, index) => (
+                    <li key={index} className="collection-item valign-wrapper row">
+                        <p className="col s11" style={{ color: '#26a69a' }}>{produto.nome}</p>
+                        <p className="col s1 caixa-btn-pg-cadastros">
+                            <a className="btn-procurar-editar-excluir">
+                                <FontAwesomeIcon icon={faMagnifyingGlass} />
+                            </a>
+                            <a className="btn-procurar-editar-excluir">
+                                <FontAwesomeIcon icon={faPencil} />
+                            </a>
+                            <a className="btn-procurar-editar-excluir">
+                                <FontAwesomeIcon icon={faTrashCan} />
+                            </a>
+                        </p>
+                    </li>
+                ))}
             </ul>
-        </div >
-    ) 
+        </div>
+    );
 }
