@@ -20,7 +20,7 @@ export default function FormularioCadastroProduto(props){
 
                 <div className="row">
                     <div className="col s12">
-                        <button className="btn btn-cadastrar" type="submit" name="action">Submit
+                        <button className="btn btn-cadastrar" type="submit" name="action">cadastrar
                             <i className="material-icons right">send</i>
                         </button>
                     </div>

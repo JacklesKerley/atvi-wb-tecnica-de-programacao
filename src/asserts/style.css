@@ -10,6 +10,12 @@
     font-weight: bolder;
 }
 
+@media (max-width: 800px) {
+    .home > div > p {
+        font-size: 500%;
+    }
+}
+
 .home > div > p > strong {
     color: #26a69a;
     font-weight: 800;
@@ -29,7 +35,8 @@
 
 .caixa-btn-pg-cadastros{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    padding: 0 !important;
 }
 
 .btn-procurar-editar-excluir {
