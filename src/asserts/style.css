@@ -10,6 +10,12 @@
     font-weight: bolder;
 }
 
+@media (max-width: 800px) {
+    .home > div > p {
+        font-size: 500%;
+    }
+}
+
 .home > div > p > strong {
     color: #26a69a;
     font-weight: 800;

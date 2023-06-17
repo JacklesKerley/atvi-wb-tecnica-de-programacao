@@ -10,6 +10,7 @@ import ListaProduto from "./listaProduto";
 import FormularioEditarCliente from "./formularioEditarCliente";
 import FormularioEditarServico from "./formularioEditarServico";
 import FormularioEditarProduto from "./formularioEditarProduto";
+import FormularioCompra from "./formularioCompra";
 
 
 type state = {
@@ -38,7 +39,7 @@ export default class Roteador extends Component<{}, state> {
             <BarraNavegacao
                 seletorView={this.selecionarView}
                 tema="purple lighten-4"
-                botoes={['Home', 'EditarCliente', 'EditarServico', 'EditarProduto', 'Cadastro de Cliente', 'Cadastro de Serviços', 'Cadastro de Produtos', 'Clientes', 'Serviços', 'Produtos']}
+                botoes={['Home', 'Compras', 'Cadastro de Cliente', 'Clientes',  'EditarCliente', 'Cadastro de Serviços', 'Serviços', 'EditarServico', 'Cadastro de Produtos', 'Produtos', 'EditarProduto']}
             />
         )
 
@@ -110,6 +111,13 @@ export default class Roteador extends Component<{}, state> {
                 <>
                     {barraNavegacao}
                     <FormularioEditarProduto tema="purple lighten-4" />
+                </>
+            );
+        } else if (this.state.tela === 'Compras') {
+            return (
+                <>
+                    {barraNavegacao}
+                    <FormularioCompra tema="purple lighten-4" />
                 </>
             );
         } else {
