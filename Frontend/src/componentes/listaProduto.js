@@ -6,7 +6,7 @@ import M from 'materialize-css';
 import axios from 'axios';
 
 export default function ListaProduto(props) {
-    const [produtos, setProdutos] = useState([]); // Estado para armazenar os dados dos produtos
+    const [produtos, setProdutos] = useState([]); 
 
     useEffect(() => {
         M.AutoInit();
@@ -17,7 +17,7 @@ export default function ListaProduto(props) {
             try {
                 const response = await axios.get('http://localhost:3000/produto');
                 const data = response.data;
-                setProdutos(data); // Atualiza o estado com os dados dos produtos
+                setProdutos(data); 
             } catch (error) {
                 console.error(error);
             }

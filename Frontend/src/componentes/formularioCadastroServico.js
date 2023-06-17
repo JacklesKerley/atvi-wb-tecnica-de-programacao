@@ -1,4 +1,28 @@
-export default function FormularioCadastroServico(props){
+import React, { useState } from 'react';
+import axios from 'axios';
+
+export default function FormularioCadastroServico(props) {
+    const [nome, setNome] = useState('');
+    const [valor, setValor] = useState('');
+
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+
+        try {
+            const response = await axios.post('http://localhost:3000/servico/', {
+                nome: nome,
+                valor: parseFloat(valor)
+            });
+            console.log(response.data); 
+
+            
+            setNome('');
+            setValor('');
+        } catch (error) {
+            console.error(error);
+        }
+    };
+
     return (
         <div className="container">
             <div className="valign-wrapper row titulo">
@@ -6,14 +30,27 @@ export default function FormularioCadastroServico(props){
                 <div className="col s3"></div>
             </div>
 
-            <form>
+            <form onSubmit={handleSubmit}>
                 <div className="row">
                     <div className="input-field col s9">
-                        <input id="sevico" type="text" className="validate" />
-                        <label htmlFor="sevico">Nome do serviço</label>
+                        <input
+                            id="servico"
+                            type="text"
+                            className="validate"
+                            value={nome}
+                            onChange={(event) => setNome(event.target.value)}
+                        />
+                        <label htmlFor="servico">Nome do Serviço</label>
                     </div>
                     <div className="input-field col s3">
-                        <input id="valor_servico" type="number" className="validate" />
+                        <input
+                            id="valor_servico"
+                            type="number"
+                            step="0.01"
+                            className="validate"
+                            value={valor}
+                            onChange={(event) => setValor(event.target.value)}
+                        />
                         <label htmlFor="valor_servico">Valor</label>
                     </div>
                 </div>
@@ -27,5 +64,5 @@ export default function FormularioCadastroServico(props){
                 </div>
             </form>
         </div>
-    )
+    );
 }

@@ -7,7 +7,7 @@ import axios from 'axios';
 
 /* eslint-disable jsx-a11y/anchor-is-valid */
 export default function ListaClientes(props) {
-    const [clientes, setClientes] = useState([]); // Estado para armazenar os dados dos clientes
+    const [clientes, setClientes] = useState([]); 
 
     useEffect(() => {
         M.AutoInit();
@@ -18,7 +18,7 @@ export default function ListaClientes(props) {
             try {
                 const response = await axios.get('http://localhost:3000/cliente');
                 const data = response.data;
-                setClientes(data); // Atualiza o estado com os dados dos clientes
+                setClientes(data); 
             } catch (error) {
                 console.error(error);
             }

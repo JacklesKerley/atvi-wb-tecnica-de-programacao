@@ -1,4 +1,28 @@
-export default function FormularioCadastroProduto(props){
+import React, { useState } from 'react';
+import axios from 'axios';
+
+export default function FormularioCadastroProduto(props) {
+    const [nome, setNome] = useState('');
+    const [valor, setValor] = useState('');
+
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+
+        try {
+            const response = await axios.post('http://localhost:3000/produto/', {
+                nome: nome,
+                valor: parseFloat(valor)
+            });
+            console.log(response.data); 
+
+            
+            setNome('');
+            setValor('');
+        } catch (error) {
+            console.error(error);
+        }
+    };
+
     return (
         <div className="container">
             <div className="valign-wrapper row titulo">
@@ -6,15 +30,28 @@ export default function FormularioCadastroProduto(props){
                 <div className="col s3"></div>
             </div>
 
-            <form>
+            <form onSubmit={handleSubmit}>
                 <div className="row">
                     <div className="input-field col s9">
-                        <input id="sevico" type="text" className="validate" />
-                        <label htmlFor="sevico">Nome do Produto</label>
+                        <input
+                            id="produto"
+                            type="text"
+                            className="validate"
+                            value={nome}
+                            onChange={(event) => setNome(event.target.value)}
+                        />
+                        <label htmlFor="produto">Nome do Produto</label>
                     </div>
                     <div className="input-field col s3">
-                        <input id="valor_servico" type="number" className="validate" />
-                        <label htmlFor="valor_servico">Valor</label>
+                        <input
+                            id="valor_produto"
+                            type="number"
+                            step="0.01"
+                            className="validate"
+                            value={valor}
+                            onChange={(event) => setValor(event.target.value)}
+                        />
+                        <label htmlFor="valor_produto">Valor</label>
                     </div>
                 </div>
 
@@ -27,5 +64,5 @@ export default function FormularioCadastroProduto(props){
                 </div>
             </form>
         </div>
-    )
+    );
 }
