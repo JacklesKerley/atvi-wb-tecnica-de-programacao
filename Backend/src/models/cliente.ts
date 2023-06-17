@@ -22,6 +22,7 @@ const Cliente = database.define('cliente', {
   cpf: {
     type: DataTypes.STRING,
     allowNull: false,
+    unique: true,
   },
 }, {
   timestamps: false,

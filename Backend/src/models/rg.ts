@@ -20,10 +20,12 @@ RG.init(
     rg1: {
       type: DataTypes.STRING,
       allowNull: false,
+      unique: true,
     },
     rg2: {
       type: DataTypes.STRING,
       allowNull: true,
+      unique: true,
     },
     idCliente: {
       type: DataTypes.INTEGER,
