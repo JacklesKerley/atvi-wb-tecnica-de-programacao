@@ -29,7 +29,8 @@
 
 .caixa-btn-pg-cadastros{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    padding: 0 !important;
 }
 
 .btn-procurar-editar-excluir {
