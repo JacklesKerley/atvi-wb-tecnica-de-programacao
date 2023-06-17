@@ -1,4 +1,4 @@
-export default function FormularioCadastroCliente(props) {
+export default function FormularioEditarCliente(props) {
     return (
         <div className="container">
             <div className="valign-wrapper row titulo">
