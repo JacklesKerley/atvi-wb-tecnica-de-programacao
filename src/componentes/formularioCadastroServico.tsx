@@ -28,7 +28,7 @@ export default class FormularioCadastroServico extends Component<props> {
 
                     <div className="row">
                         <div className="col s12">
-                            <button className="btn btn-cadastrar" type="submit" name="action">Submit
+                            <button className="btn btn-cadastrar" type="submit" name="action">Cadastrar
                                 <i className="material-icons right">send</i>
                             </button>
                         </div>

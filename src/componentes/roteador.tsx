@@ -7,6 +7,10 @@ import FormularioCadastroProduto from "./formularioCadastroProduto";
 import ListaCliente from "./listaCliente";
 import ListaServico from "./listaServico";
 import ListaProduto from "./listaProduto";
+import FormularioEditarCliente from "./formularioEditarCliente";
+import FormularioEditarServico from "./formularioEditarServico";
+import FormularioEditarProduto from "./formularioEditarProduto";
+
 
 type state = {
     tela: string
@@ -34,7 +38,7 @@ export default class Roteador extends Component<{}, state> {
             <BarraNavegacao
                 seletorView={this.selecionarView}
                 tema="purple lighten-4"
-                botoes={['Home', 'Cadastro de Cliente', 'Cadastro de Serviços', 'Cadastro de Produtos', 'Clientes', 'Serviços', 'Produtos']}
+                botoes={['Home', 'EditarCliente', 'EditarServico', 'EditarProduto', 'Cadastro de Cliente', 'Cadastro de Serviços', 'Cadastro de Produtos', 'Clientes', 'Serviços', 'Produtos']}
             />
         )
 
@@ -87,6 +91,27 @@ export default class Roteador extends Component<{}, state> {
                     <ListaProduto tema="purple lighten-4" />
                 </>
             );
+        } else if (this.state.tela === 'EditarCliente') {
+            return (
+                <>
+                    {barraNavegacao}
+                    <FormularioEditarCliente tema="purple lighten-4" />
+                </>
+            );
+        } else if (this.state.tela === 'EditarServico') {
+            return (
+                <>
+                    {barraNavegacao}
+                    <FormularioEditarServico tema="purple lighten-4" />
+                </>
+            );
+        } else if (this.state.tela === 'EditarProduto') {
+            return (
+                <>
+                    {barraNavegacao}
+                    <FormularioEditarProduto tema="purple lighten-4" />
+                </>
+            );
         } else {
             return (
                 <>
@@ -95,6 +120,8 @@ export default class Roteador extends Component<{}, state> {
                 </>
             )
         }
+
+
 
     }
 }
