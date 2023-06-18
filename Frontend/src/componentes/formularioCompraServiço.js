@@ -1,4 +1,11 @@
-export default function FormularioCadastroProduto(props) {
+import M from 'materialize-css';
+import React, { useEffect } from 'react';
+
+export default function FormularioCompraServico(props) {
+    useEffect(() => {
+        M.AutoInit();
+      }, []);
+
     return (
         <div className="container">
             <div className="valign-wrapper row titulo">
@@ -7,25 +14,20 @@ export default function FormularioCadastroProduto(props) {
             </div>
 
             <form className="row">
-                <div className="col s3">
-                    <label>Selecione o tipo de compra</label>
-                    <select>
-                        <option>Produto</option>
-                        <option>Serviço</option>
-                    </select>
-                </div>
                 <div className="col s8">
-                    <label>Selecione o Produto</label>
+                    <label>Selecione o Serviço</label>
                     <select>
-                        <option>Produto 1</option>
-                        <option>Produto 2</option>
+                        <option>Serviço 1</option>
+                        <option>Serviço 2</option>
                     </select>
                 </div>
-                <div className="col s1">
-                    <label style={{ textAlign: "center" }}>Quantidade</label>
-                    <input type="text" value="2" style={{ textAlign: "center" }} />
+                <div className="col s4">
+                    <label>Selecione o Cliente</label>
+                    <select>
+                        <option>Cliente 1</option>
+                        <option>Cliente 2</option>
+                    </select>
                 </div>
-
                 <div className="row">
                     <div className="col s12" style={{ marginTop: "8px" }}>
                         <button className="btn btn-cadastrar" type="submit" name="action">Comprar
@@ -36,3 +38,4 @@ export default function FormularioCadastroProduto(props) {
         </div>
     )
 }
+

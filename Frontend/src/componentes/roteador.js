@@ -7,6 +7,8 @@ import FormularioCadastroServico from "./formularioCadastroServico";
 import FormularioCadastroProduto from "./formularioCadastroProduto";
 import ListaProduto from "./listaProduto";
 import ListaServico from "./listaServico";
+import FormularioCompraProduto from "./formularioCompraProduto";
+import FormularioCompraServico from "./formularioCompraServiço";
 
 export default function Roteador() {
     const [tela, setTela] = useState('Home')
@@ -19,7 +21,7 @@ export default function Roteador() {
     const construirView = () => {
 
         let barraNavegacao = (
-            <BarraNavegacao seletorView={seletorView} tema="purple lighten-4" botoes={['Home', 'Cadastro de Cliente', 'Cadastro de Serviços', 'Cadastro de Produtos', 'Clientes', 'Serviços', 'Produtos']} />
+            <BarraNavegacao seletorView={seletorView} tema="purple lighten-4" botoes={['Home', 'Compras Produto', 'Compras Serviço', 'Cadastro de Cliente', 'Cadastro de Serviços', 'Cadastro de Produtos', 'Clientes', 'Serviços', 'Produtos']} />
         )
 
         if (tela === 'Clientes') {
@@ -69,6 +71,27 @@ export default function Roteador() {
                 <>
                     {barraNavegacao}
                     <ListaProduto tema="purple lighten-4" />
+                </>
+            )
+        } else if (tela === 'Compras') {
+            return (
+                <>
+                    {barraNavegacao}
+                    <FormularioCompraProduto tema="purple lighten-4" />
+                </>
+            )
+        } else if (tela === 'Compras Produto') {
+            return (
+                <>
+                    {barraNavegacao}
+                    <FormularioCompraProduto tema="purple lighten-4" />
+                </>
+            )
+        } else if (tela === 'Compras Serviço') {
+            return (
+                <>
+                    {barraNavegacao}
+                    <FormularioCompraServico tema="purple lighten-4" />
                 </>
             )
         }else {
